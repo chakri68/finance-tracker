@@ -4,6 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div id="popups"></div>
+    <main>
+      <h1>Finance Tracker</h1>
+
+      <div class="toolbar">
+        <button id="add-account" class="toolbar-item" title="Add New Account">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      <div id="account-cards"></div>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <!-- Templates -->
+
+    <template id="toast-template">
+      <div class="toast clickable-effect">
+        <div class="toast-content">
+          <h3 class="toast-title"></h3>
+          <p class="toast-message"></p>
+        </div>
+        <button class="toast-close clickable-effect">Close</button>
+      </div>
+    </template>
+
+    <template id="account-card-template">
+      <div class="account-card card" tabindex="0">
+        <div class="account-card-header">
+          <div class="account-title"></div>
+          <div class="account-amount">
+            <span class="current-amount"></span>
+            <div class="amount-controls">
+              <button class="minus">
+                <i class="fas fa-minus"></i>
+              </button>
+              <input
+                type="number"
+                class="amount-input"
+                placeholder="Enter new amount"
+              />
+              <button class="plus">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="toolbar">
+            <button class="delete-button">Delete</button>
+            <button class="history-button">History</button>
+          </div>
+        </div>
+        <div class="account-card-body">
+          <div class="expenses">
+            <i class="fa-solid fa-arrow-trend-down graph-icon"></i>
+            <div class="account-expenses">0</div>
+          </div>
+          <div class="income">
+            <div class="account-income">0</div>
+            <i class="fa-solid fa-arrow-trend-up graph-icon"></i>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="form-template">
+      <div class="dynamic-form"></div>
+    </template>
+
+    <template id="dialog-template">
+      <dialog class="dynamic-dialog">
+        <button class="dialog-close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3 class="title"></h3>
+        <h5 class="subtitle"></h5>
+        <div class="content"></div>
+        <div class="actions"></div>
+      </dialog>
+    </template>
+
+    <template class="form-field-template" id="default">
+      <div class="dynamic-form-field default">
+        <label class="label"></label>
+        <input class="input" />
+      </div>
+    </template>
+
+    <template id="transaction-history-table-template">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>type</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </template>
+  </body>
 </html>
