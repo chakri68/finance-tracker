@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "none",
-  entry: "./src/index.ts",
+  entry: "./src/index.js",
   output: {
     path: __dirname + "/dist",
     filename: "bundle.js",
@@ -13,7 +13,7 @@ module.exports = {
       hash: true,
       filename: "index.html",
       template: "./src/index.html",
-      title: "wepack+babel+sass",
+      title: "Finance Tracker",
     }),
   ],
   devtool: "eval-source-map",
@@ -22,7 +22,7 @@ module.exports = {
     hot: true,
   },
   resolve: {
-    extensions: ["*", ".ts", ".js"],
+    extensions: ["*", ".js"],
   },
   module: {
     rules: [
@@ -33,11 +33,6 @@ module.exports = {
       {
         test: /\.(s(a|c)ss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_module/,
-        use: "ts-loader",
       },
     ],
   },
