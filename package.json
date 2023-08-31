@@ -1,5 +1,5 @@
 {
-  "name": "webpack-babel-template",
+  "name": "finance-tracker-ui",
   "version": "1.0.0",
   "main": "dist/bundle.js",
   "author": "chakri68",
@@ -18,8 +18,6 @@
     "node-sass": "^9.0.0",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "ts-loader": "^9.4.3",
-    "typescript": "^5.1.3",
     "webpack": "^5.87.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
