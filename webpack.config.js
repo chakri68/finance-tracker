@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "none",
@@ -14,6 +15,10 @@ module.exports = {
       filename: "index.html",
       template: "./src/index.html",
       title: "Finance Tracker",
+      favicon: "./src/public/favicon.ico",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "./src/public", to: "public" }],
     }),
   ],
   devtool: "eval-source-map",
